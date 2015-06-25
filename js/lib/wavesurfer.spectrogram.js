@@ -113,14 +113,19 @@ WaveSurfer.Spectrogram = {
 
         var length = my.wavesurfer.backend.getDuration();
         var height = my.height;
+        
+        //console.log(frequenciesData);
 
         var pixels = my.resample(frequenciesData);
+        
+         //console.log(pixels);
 
         var heightFactor = 2 / my.buffer.numberOfChannels;
 
         for (var i = 0; i < pixels.length; i++) {
             for (var j = 0; j < pixels[i].length; j++) {
                 var colorValue = 255 - pixels[i][j];
+                //console.log(pixels[i][j]);
                 my.spectrCc.fillStyle = 'rgb(' + colorValue + ', '  + colorValue + ', ' + colorValue + ')';
                 my.spectrCc.fillRect(i, height - j * heightFactor, 1, 1 * heightFactor);
             }
@@ -129,6 +134,7 @@ WaveSurfer.Spectrogram = {
 
     getFrequencies: function(callback) {
         var fftSamples = this.fftSamples;
+        console.log(fftSamples);
         var buffer = this.buffer;
         
         var frequencies = [];

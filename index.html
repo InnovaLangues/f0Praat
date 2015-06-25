@@ -11,6 +11,7 @@
         <script src="js/lib/charts.js"></script>
         <script src="js/lib/wavesurfer.js"></script>
         <script src="js/lib/wavesurfer.timeline.js"></script>
+        <script src="js/lib/wavesurfer.spectrogram.js"></script>
         <script src="js/main.js"></script>
     </head>
 
@@ -27,7 +28,7 @@
                 <div class="col-md-12">
                     <div id="wave-timeline" style="width: 94%; margin-left:80px;"></div>
                     <div id="wav-container" style="width: 94%; margin-left:80px;">
-                       <div class="progress progress-striped active" id="progress-bar">
+                        <div class="progress progress-striped active" id="progress-bar">
                             <div class="progress-bar progress-bar-info"></div>
                         </div>
                     </div>
@@ -37,6 +38,11 @@
                 <div class="col-md-12 text-center">
                     <button role="button" type="button" onclick="play()" class="btn btn-default glyphicon glyphicon-play"></button>
                     <button role="button" type="button" onclick="pause()" class="btn btn-default glyphicon glyphicon-pause"></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="wave-spectrogram"></div>
                 </div>
             </div>
         </div>
